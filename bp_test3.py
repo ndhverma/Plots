@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
+import numpy as np
 
 st.title('Violin Plot with CSV Upload')
 
@@ -23,7 +23,7 @@ if uploaded_file is not None:
 
     # Create the violin plot
     fig, ax = plt.subplots()
-    sns.violinplot(data=df, ax=ax)
+    ax.violinplot(dataset=df.values, showmedians=True)
     ax.set_title('Violin Plot')
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
